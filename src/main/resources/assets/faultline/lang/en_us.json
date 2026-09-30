@@ -1,0 +1,13 @@
+{
+  "itemGroup.faultline": "Example Mod Tab",
+  "block.faultline.example_block": "Example Block",
+  "item.faultline.example_item": "Example Item",
+
+  "faultline.configuration.title": "Faultline Configs",
+  "faultline.configuration.section.faultline.common.toml": "Faultline Configs",
+  "faultline.configuration.section.faultline.common.toml.title": "Faultline Configs",
+  "faultline.configuration.items": "Item List",
+  "faultline.configuration.logDirtBlock": "Log Dirt Block",
+  "faultline.configuration.magicNumberIntroduction": "Magic Number Text",
+  "faultline.configuration.magicNumber": "Magic Number"
+}
