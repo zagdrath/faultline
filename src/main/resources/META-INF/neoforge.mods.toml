@@ -5,7 +5,9 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 authors="Zagdrath"
-logoFile="faultline_logo.png"
+iconFile="faultline_icon.png"
+iconBlur=false
+bannerFile="faultline_banner.png"
 logoBlur=false
 description='''
 Mine a whole vein at once. Hold the Faultline key and break a block to take out every matching block connected to it: ores, logs, stone, anything. It works with any tool or your bare hand, and the config lets you set the limits.
