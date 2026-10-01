@@ -16,7 +16,6 @@ import net.zagdrath.faultline.selection.BlockedReason;
 
 /** The small panel showing the mode, the scroll hint and how many blocks are selected. */
 final class HudOverlay {
-    private static final int MARGIN = 4;
     private static final int PADDING = 1;
     private static final int BACKGROUND = 0x90000000;
     private static final int WHITE = 0xFFFFFFFF;
@@ -55,8 +54,11 @@ final class HudOverlay {
         ClientConfig.Corner corner = ClientConfig.HUD_CORNER.get();
         boolean right = corner == ClientConfig.Corner.TOP_RIGHT || corner == ClientConfig.Corner.BOTTOM_RIGHT;
         boolean bottom = corner == ClientConfig.Corner.BOTTOM_LEFT || corner == ClientConfig.Corner.BOTTOM_RIGHT;
-        int x = right ? graphics.guiWidth() - MARGIN - panelWidth : MARGIN;
-        int y = bottom ? graphics.guiHeight() - MARGIN - panelHeight : MARGIN;
+        // Clamp so a large offset or a small window never pushes the panel off screen.
+        int offsetX = Math.min(ClientConfig.HUD_OFFSET_X.get(), Math.max(0, graphics.guiWidth() - panelWidth));
+        int offsetY = Math.min(ClientConfig.HUD_OFFSET_Y.get(), Math.max(0, graphics.guiHeight() - panelHeight));
+        int x = right ? graphics.guiWidth() - offsetX - panelWidth : offsetX;
+        int y = bottom ? graphics.guiHeight() - offsetY - panelHeight : offsetY;
 
         graphics.fill(x, y, x + panelWidth, y + panelHeight, BACKGROUND);
         for (int i = 0; i < lines.size(); i++) {

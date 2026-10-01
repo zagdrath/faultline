@@ -35,6 +35,16 @@ public final class ClientConfig {
             .translation(key("hudCorner"))
             .defineEnum("hudCorner", Corner.TOP_LEFT);
 
+    public static final ModConfigSpec.IntValue HUD_OFFSET_X = BUILDER
+            .comment("Pixels between the panel and the left or right edge of the screen (whichever side its corner is on).")
+            .translation(key("hudOffsetX"))
+            .defineInRange("hudOffsetX", 4, 0, 4096);
+
+    public static final ModConfigSpec.IntValue HUD_OFFSET_Y = BUILDER
+            .comment("Pixels between the panel and the top or bottom edge of the screen. The default leaves room for a one-line FPS counter.")
+            .translation(key("hudOffsetY"))
+            .defineInRange("hudOffsetY", 16, 0, 4096);
+
     public static final ModConfigSpec.ConfigValue<String> OUTLINE_COLOR = BUILDER
             .comment("Colour of the selection outline, as RRGGBB hex.")
             .translation(key("outlineColor"))
