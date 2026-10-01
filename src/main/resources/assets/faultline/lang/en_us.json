@@ -22,6 +22,8 @@
   "faultline.configuration.title": "Faultline Settings",
   "faultline.configuration.section.faultline.synced.toml": "Server Settings",
   "faultline.configuration.section.faultline.synced.toml.title": "Faultline Server Settings",
+  "faultline.configuration.section.faultline.server.toml": "Server Settings",
+  "faultline.configuration.section.faultline.server.toml.title": "Faultline Server Settings",
   "faultline.configuration.section.faultline.client.toml": "Client Settings",
   "faultline.configuration.section.faultline.client.toml.title": "Faultline Client Settings",
 

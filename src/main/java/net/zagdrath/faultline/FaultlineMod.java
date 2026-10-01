@@ -22,9 +22,22 @@ public final class FaultlineMod {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public FaultlineMod(IEventBus modBus, ModContainer container) {
-        container.registerConfig(ModConfig.Type.SYNCED, ServerConfig.SPEC);
+        container.registerConfig(syncedConfigType(), ServerConfig.SPEC);
         modBus.addListener(FaultlineNetwork::register);
         VeinMineHandler.register(NeoForge.EVENT_BUS);
+    }
+
+    /**
+     * The server-owned config type that is synced to clients. NeoForge 26.3.0.39-beta renamed it from
+     * {@code SERVER} to {@code SYNCED}; looking it up by name keeps one jar working on both sides of
+     * the rename, because the bytecode never refers to the constant that might be missing.
+     */
+    private static ModConfig.Type syncedConfigType() {
+        try {
+            return ModConfig.Type.valueOf("SYNCED");
+        } catch (IllegalArgumentException renamedLater) {
+            return ModConfig.Type.valueOf("SERVER");
+        }
     }
 
     public static Identifier id(String path) {

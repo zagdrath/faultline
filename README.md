@@ -1,10 +1,12 @@
 # Faultline
 
+![Faultline](docs/banner.png)
+
 Mine a whole vein at once. Hold the Faultline key (`` ` `` by default) and break a block to take out
 every matching block connected to it: ores, logs, stone, anything. It works with any tool or your bare
 hand, and the config lets you set the limits.
 
-For Minecraft 26.3 on NeoForge.
+For Minecraft 26.3 on NeoForge 26.3.0.23-beta or newer.
 
 ## Using it
 
@@ -28,6 +30,9 @@ tree. Leaves are only taken when you start on a leaf.
 Server settings (max blocks, max distance, hunger, cooldown, drop gathering, matching rules, enabled
 modes) are synced to clients, so the preview always matches what the server will break. Client settings
 cover the HUD, the outline colour and scrolling. Both can be edited from the Mods screen.
+
+The server settings file is `faultline-synced.toml` on NeoForge 26.3.0.39-beta and newer, and
+`faultline-server.toml` on earlier betas.
 
 Tags for pack makers:
 

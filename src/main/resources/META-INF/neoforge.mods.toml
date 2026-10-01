@@ -5,6 +5,8 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 authors="Zagdrath"
+logoFile="faultline_logo.png"
+logoBlur=false
 description='''
 Mine a whole vein at once. Hold the Faultline key and break a block to take out every matching block connected to it: ores, logs, stone, anything. It works with any tool or your bare hand, and the config lets you set the limits.
 '''
@@ -12,7 +14,8 @@ Mine a whole vein at once. Hold the Faultline key and break a block to take out 
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
-    versionRange="[${neo_version},)"
+    # Built against neo_version, but also works on earlier 26.3 betas back to 23-beta.
+    versionRange="[26.3.0.23-beta,)"
     ordering="NONE"
     side="BOTH"
 
